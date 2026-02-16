@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -25,24 +25,24 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       y: "-100%",
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1] as any, // Custom bezier
+        ease: [0.22, 1, 0.36, 1], // Custom bezier
       },
     },
     open: {
       y: "0%",
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1] as any,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     closed: { opacity: 0, y: 30 },
     open: (i: number) => ({
       opacity: 1,
