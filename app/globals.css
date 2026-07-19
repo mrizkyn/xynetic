@@ -1,28 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark Futuristic Theme Palette */
-  --background: #020617; /* Slate 950 / Deep Navy */
-  --foreground: #f8fafc; /* Slate 50 */
+  /* Light Corporate Theme Palette */
+  --background: #ffffff; /* White */
+  --foreground: #0f172a; /* Slate 900 */
 
-  --primary: #06b6d4; /* Cyan 500 */
-  --primary-foreground: #020617;
+  --primary: #0f172a; /* Slate 900 (Elegant Corporate Dark) */
+  --primary-foreground: #ffffff;
 
-  --secondary: #7c3aed; /* Violet 600 */
+  --secondary: #475569; /* Slate 600 */
   --secondary-foreground: #ffffff;
 
-  --accent: #d946ef; /* Fuchsia 500 */
+  --accent: #0ea5e9; /* Sky 500 */
   --accent-foreground: #ffffff;
 
-  --muted: #1e293b; /* Slate 800 */
-  --muted-foreground: #94a3b8; /* Slate 400 */
+  --muted: #f1f5f9; /* Slate 100 */
+  --muted-foreground: #64748b; /* Slate 500 */
 
-  --card: #0f172a; /* Slate 900 */
-  --card-foreground: #f8fafc;
-
-  --border: #1e293b; /* Slate 800 */
-  --input: #1e293b;
-  --ring: #06b6d4;
+  --card: #ffffff; /* White */
+  --card-foreground: #0f172a;
+  --border: #e2e8f0; /* Slate 200 */
+  --input: #e2e8f0;
+  --ring: #0f172a;
 
   --radius: 0.5rem;
 }
@@ -48,8 +47,7 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -62,6 +60,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 /* Custom Scrollbar for futuristic feel */
@@ -70,11 +69,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: var(--muted);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
+  background: var(--border);
   border-radius: 4px;
 }
 

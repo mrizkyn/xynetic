@@ -54,7 +54,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60"
           >
             Our Expertise
           </motion.h2>
@@ -78,7 +78,7 @@ export function ServicesSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={cn(
-                "group relative p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-3xl border border-white/5 bg-card/30 backdrop-blur-sm overflow-hidden",
+                "group relative p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-3xl border border-black/5 bg-white shadow-sm overflow-hidden",
                 "hover:bg-card/50 transition-all duration-500",
                 "hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:border-primary/30",
                 service.className,
@@ -87,7 +87,7 @@ export function ServicesSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10 h-full flex flex-col justify-between">
-                <div className="mb-4 sm:mb-5 md:mb-6 p-2.5 sm:p-3 rounded-xl md:rounded-2xl bg-white/5 w-fit group-hover:bg-primary/10 transition-colors duration-500">
+                <div className="mb-4 sm:mb-5 md:mb-6 p-2.5 sm:p-3 rounded-xl md:rounded-2xl bg-black/5 w-fit group-hover:bg-primary/10 transition-colors duration-500">
                   {service.icon}
                 </div>
 

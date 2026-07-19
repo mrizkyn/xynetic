@@ -4,8 +4,24 @@ import { motion, Variants } from "framer-motion";
 import { ArrowRight, Code2, Rocket, Zap } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 export function HeroSection() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.pageX,
+        y: e.pageY,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,6 +46,23 @@ export function HeroSection() {
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background pt-16 md:pt-20">
       {/* Abstract Animated Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Interactive Pointer Glow (Like Antigravity) */}
+        {isMounted && (
+          <motion.div
+            animate={{
+              x: mousePosition.x - 200,
+              y: mousePosition.y - 200,
+            }}
+            transition={{
+              type: "spring",
+              damping: 40,
+              stiffness: 150,
+              mass: 0.8,
+            }}
+            className="absolute top-0 left-0 w-[400px] h-[400px] bg-sky-400/20 rounded-full blur-[80px] pointer-events-none hidden md:block"
+          />
+        )}
+
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -40,7 +73,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[-20%] left-[-20%] w-[600px] h-[600px] md:w-[900px] md:h-[900px] bg-primary/20 rounded-full blur-[100px] md:blur-[150px]"
+          className="absolute top-[-20%] left-[-20%] w-[600px] h-[600px] md:w-[900px] md:h-[900px] bg-sky-300/30 rounded-full blur-[100px] md:blur-[150px]"
         />
         <motion.div
           animate={{
@@ -53,7 +86,7 @@ export function HeroSection() {
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] md:w-[1000px] md:h-[1000px] bg-secondary/20 rounded-full blur-[120px] md:blur-[180px]"
+          className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] md:w-[1000px] md:h-[1000px] bg-indigo-300/30 rounded-full blur-[120px] md:blur-[180px]"
         />
 
         {/* Moving Grid Effect (Simplified for CSS/Motion) */}
@@ -71,16 +104,16 @@ export function HeroSection() {
           <motion.div variants={itemVariants} className="flex justify-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted/50 border border-primary/20 text-xs sm:text-sm font-medium text-primary shadow-[0_0_15px_rgba(6,182,212,0.1)] backdrop-blur-sm">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              Future-Ready Software Solutions
+              Bivara Labs Software Development
             </div>
           </motion.div>
 
           {/* Headline */}
           <motion.div variants={itemVariants}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-foreground leading-[1.1]">
-              Elevating <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary animate-gradient-x">
-                Digital Reality
+              Engineering the <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground to-secondary animate-gradient-x">
+                Unimagined
               </span>
             </h1>
           </motion.div>
@@ -88,6 +121,9 @@ export function HeroSection() {
           {/* Sub-headline */}
           <motion.div variants={itemVariants}>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed px-4">
+              <strong className="text-foreground font-semibold">
+                Bridging Innovation, Vision, and Reality.
+              </strong>{" "}
               We craft high-end web applications and enterprise systems that
               merge
               <span className="text-foreground font-medium">
@@ -142,8 +178,8 @@ export function HeroSection() {
           className="absolute top-1/2 left-10 -translate-y-1/2 hidden xl:block"
         >
           {/* Decorative Code Block or Graphic */}
-          <div className="p-4 rounded-xl border border-white/5 bg-black/40 backdrop-blur-sm -rotate-6">
-            <Code2 className="w-8 h-8 text-secondary/50" />
+          <div className="p-4 rounded-xl border border-black/5 bg-white/80 backdrop-blur-sm -rotate-6 shadow-sm">
+            <Code2 className="w-8 h-8 text-secondary/70" />
           </div>
         </motion.div>
         <motion.div
@@ -152,8 +188,8 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 2 }}
           className="absolute top-1/2 right-10 -translate-y-1/2 hidden xl:block"
         >
-          <div className="p-4 rounded-xl border border-white/5 bg-black/40 backdrop-blur-sm rotate-12">
-            <Zap className="w-8 h-8 text-primary/50" />
+          <div className="p-4 rounded-xl border border-black/5 bg-white/80 backdrop-blur-sm rotate-12 shadow-sm">
+            <Zap className="w-8 h-8 text-primary/70" />
           </div>
         </motion.div>
       </div>
