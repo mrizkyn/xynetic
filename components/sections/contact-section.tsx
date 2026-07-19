@@ -79,10 +79,10 @@ export function ContactSection() {
                     Chat on WhatsApp
                   </p>
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/6281228394601"
                     className="text-lg sm:text-xl font-medium text-foreground group-hover:text-green-500 transition-colors"
                   >
-                    +62 812 3456 7890
+                    Whatsapp
                   </a>
                 </div>
               </div>
