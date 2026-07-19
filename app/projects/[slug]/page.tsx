@@ -10,7 +10,7 @@ const projectDetails: Record<string, any> = {
     client: "Bivara Internal",
     year: "2026",
     description: "Nerakita is our flagship SaaS product designed to simplify accounting for small to medium enterprises. It provides real-time financial reporting, automated invoicing, and intelligent expense tracking in one intuitive dashboard.",
-    image: "/images/projects/neon-nexus.png",
+    image: "/images/projects/nerakita/dashboard.png",
     technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
     link: "/products/nerakita", // Points to the product page instead of an external site
     content: []

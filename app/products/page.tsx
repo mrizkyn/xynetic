@@ -13,7 +13,7 @@ const products = [
     title: "Nerakita Accounting System",
     category: "Finance & Accounting",
     description: "Our flagship cloud-based accounting software designed to simplify financial management, automated invoicing, and real-time reporting for modern businesses.",
-    image: "/images/projects/neon-nexus.png",
+    image: "/images/projects/nerakita/dashboard.png",
     color: "from-violet-600 to-indigo-600",
   },
   // Future products can be added here
