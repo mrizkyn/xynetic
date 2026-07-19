@@ -46,13 +46,12 @@ export default function ProductsPage() {
               key={product.slug}
               className="group relative bg-white rounded-3xl overflow-hidden border border-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-500 flex flex-col"
             >
-              <div className="relative w-full aspect-video overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-80 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className="relative w-full aspect-video overflow-hidden border-b border-black/5 bg-slate-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               
