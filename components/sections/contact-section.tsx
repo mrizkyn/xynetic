@@ -62,10 +62,10 @@ export function ContactSection() {
                     Email us at
                   </p>
                   <a
-                    href="mailto:hello@bivara.com"
+                    href="mailto:bivaralabs@gmail.com"
                     className="text-lg sm:text-xl font-medium text-foreground group-hover:text-primary transition-colors"
                   >
-                    hello@bivara.com
+                    bivaralabs@gmail.com
                   </a>
                 </div>
               </div>

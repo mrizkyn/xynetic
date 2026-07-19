@@ -159,8 +159,8 @@ export function Navbar() {
                   <h4 className="text-foreground font-semibold mb-2">
                     Contact
                   </h4>
-                  <p>hello@bivara.com</p>
-                  <p>+62 812 3456 7890</p>
+                  <p>bivaralabs@gmail.com</p>
+                  <p></p>
                 </div>
                 <div>
                   <h4 className="text-foreground font-semibold mb-2">
